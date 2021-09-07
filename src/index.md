@@ -1,6 +1,7 @@
 ---
 layout: base.njk
-title: Very nice
 ---
 
-# Good cool blog
+# Nice cool blog
+
+This is my nice, cool, blog. Welcome!
