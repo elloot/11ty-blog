@@ -1,5 +1,7 @@
 ---
 title: Getting started with eleventy
+tags: ['post', 'eleventy', '11ty', 'tutorial']
+excerpt: A short tutorial for getting started with eleventy.
 ---
 
 # {{ title }}
