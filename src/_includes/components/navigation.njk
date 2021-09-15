@@ -1,6 +1,6 @@
 {% if navigation.items %}
-  <nav class="container">
-    <ul class="nav-list">
+  <nav>
+    <ul class="nav-list container">
       {% for item in navigation.items %}
         <li>
           <a href="{{ item.url }}">{{ item.text }}</a>
