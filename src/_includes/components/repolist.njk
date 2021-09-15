@@ -1,7 +1,8 @@
-<ul>
+<ul class="repolist">
   {% for repo in repos %}
     <li>
       <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+      <p>{{ repo.description }}</p>
     </li>
   {% endfor %}
 </ul>
