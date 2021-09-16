@@ -10,9 +10,11 @@
       rel="stylesheet">
     <title>{{ meta.siteTitle }}</title>
   </head>
-  <body class="container">
+  <body>
     {% include "components/navigation.njk" %}
-    <main>{{ content | safe }}</main>
+    <main class="container">
+      <div class="container">{{ content | safe }}</div>
+    </main>
     {% include "components/footer.njk" %}
   </body>
 </html>

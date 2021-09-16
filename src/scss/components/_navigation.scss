@@ -1,0 +1,14 @@
+nav {
+  padding: 8px 0;
+  width: 100vw;
+  background: #cdcdcd;
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    li {
+      list-style: none;
+      font-size: 2rem;
+    }
+  }
+}
