@@ -24,6 +24,10 @@
   "homepage": "https://github.com/elloot/11ty-blog#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-cache-assets": "^2.3.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "dotenv": "^10.0.0",
     "modularscale-sass": "^3.0.10",
     "npm-run-all": "^4.1.5",
     "sass": "^1.39.0"
