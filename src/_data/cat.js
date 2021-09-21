@@ -1,10 +1,10 @@
 const Cache = require('@11ty/eleventy-cache-assets');
 
-module.exports = () => {
+module.exports = async () => {
   const url = 'https://aws.random.cat/meow';
-  const imageBuffer = await Cache(url, {
+  const imageObject = await Cache(url, {
     duration: '1d',
-    type: 'buffer'
+    type: 'json'
   });
-  return imageBuffer;
+  return imageObject.file;
 };
