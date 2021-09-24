@@ -28,6 +28,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
+  eleventyConfig.addFilter('getLatest', (arr) => {
+    arr.sort((a, b) => {
+      if (a.date < b.date) return 1;
+      if (a.date > b.date) return -1;
+      return 0;
+    });
+    return arr[0];
+  });
+
   return {
     dir: {
       input: 'src'
