@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: elloot homepage
+---
+
+<h1 class="wordmark">elloot</h1>
+<div class="card-container">
+  <div class="card__type"><span>Latest blog post</span></div>
+  <div class="card">
+    {% set latestPost = collections.post | getLatestPost %}
+    <div class="card__content">{{latestPost.templateContent | safe}}</div>
+    <a href="{{latestPost.url}}" class="latest-blog-link">Read more</a>
+  </div>
+</div>
+<div class="card-container">
+  <div class="card__type"><span>Latest repository</span></div>
+  <div class="card">
+    {% set latestRepo = repos | getLatestRepo %}
+    <div class="card__content">{{latestRepo.description}}</div>
+    <a href="{{latestPost.url}}" class="latest-blog-link">Read more</a>
+  </div>
+</div>
