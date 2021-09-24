@@ -1,7 +1,3 @@
 ---
-layout: base.njk
+layout: home.njk
 ---
-
-# Nice cool blog
-
-This is my nice, cool, blog. Welcome!
