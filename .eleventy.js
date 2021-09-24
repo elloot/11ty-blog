@@ -20,6 +20,15 @@ async function imageShortcode(src, alt, sizes) {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
+function sortByDate(arr, dateName) {
+  arr.sort((a, b) => {
+    if (a[dateName] < b[dateName]) return 1;
+    if (a[dateName] > b[dateName]) return -1;
+    return 0;
+  });
+  return arr;
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
@@ -28,13 +37,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
-  eleventyConfig.addFilter('getLatest', (arr) => {
-    arr.sort((a, b) => {
-      if (a.date < b.date) return 1;
-      if (a.date > b.date) return -1;
-      return 0;
+  eleventyConfig.addFilter('getLatestPost', (arr) => {
+    return sortByDate(arr, 'date')[0];
+  });
+
+  eleventyConfig.addFilter('getLatestRepo', (arr) => {
+    arr.forEach((repo) => {
+      repo.updated_at = new Date(repo.updated_at);
     });
-    return arr[0];
+    return sortByDate(arr, 'updated_at')[0];
   });
 
   return {
