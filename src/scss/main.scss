@@ -4,33 +4,15 @@
 @import './components/navigation';
 @import './components/footer';
 @import './components/repolist';
+@import './components/mobile-card';
 
 body {
+  padding: 20px;
   position: relative;
-}
-
-main {
 }
 
 a {
-  color: #8f6593;
+  color: black;
+  font-weight: bold;
   text-decoration: none;
-  position: relative;
-  &:visited {
-    color: #8f6593;
-  }
-  &:hover::after {
-    width: 80%;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    transition: width 0.1s ease-in-out;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background-color: #aea4bf;
-  }
 }
