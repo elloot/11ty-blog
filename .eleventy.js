@@ -1,7 +1,6 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const Image = require('@11ty/eleventy-img');
-const Cache = require('@11ty/eleventy-cache-assets');
 const htmlToAbsoluteUrls = require('@11ty/eleventy-plugin-rss/src/htmlToAbsoluteUrls');
 
 async function imageShortcode(src, alt, sizes) {
@@ -44,27 +43,6 @@ function decreaseHeadingSizes(htmlTemplate) {
   return newTemplate;
 }
 
-async function getRepoReadme(repo) {
-  try {
-    const readme = Cache(
-      `https://raw.githubusercontent.com/${repo.full_name}/main/README.md`,
-      {
-        duration: '12h',
-        type: 'text',
-        fethOptions: {
-          headers: {
-            authorization: process.env.GITHUB_TOKEN
-          }
-        }
-      }
-    );
-    return readme;
-  } catch (e) {
-    console.log(e);
-    return '';
-  }
-}
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
@@ -78,8 +56,6 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('decreaseHeadingSizes', decreaseHeadingSizes);
-
-  eleventyConfig.addFilter('getRepoReadme', getRepoReadme);
 
   eleventyConfig.addFilter('getLatestRepo', (arr) => {
     arr.forEach((repo) => {
