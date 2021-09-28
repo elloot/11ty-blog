@@ -21,7 +21,7 @@ title: elloot homepage
   <div class="card__type"><span>Latest repository</span></div>
   <div class="card">
     {% set latestRepo = repos | getLatestRepo %}
-    <div class="card__content">{{latestRepo | getRepoReadme}}</div>
+    <div class="card__content">{{latestRepoReadme}}</div>
     <a href="{{latestPost.url}}" class="latest-link">
       Read more
       <svg class="arrow-forward" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
