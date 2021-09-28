@@ -30,10 +30,12 @@
     "@11ty/eleventy-img": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "canvas-confetti": "^1.4.0",
     "dotenv": "^10.0.0",
     "eleventy-plugin-sharp": "^0.0.3",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.57.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.39.0"
   }

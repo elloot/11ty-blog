@@ -1,4 +1,5 @@
 import { terser } from 'rollup-plugin-terser';
+import nodeResolve from 'rollup-plugin-node-resolve';
 
 export default {
   input: 'src/js/main.js',
@@ -6,5 +7,5 @@ export default {
     file: '_site/js/bundle.js',
     format: 'iife'
   },
-  plugins: [terser()]
+  plugins: [terser(), nodeResolve()]
 };
